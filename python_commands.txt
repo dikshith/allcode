@@ -1,0 +1,9 @@
+
+PS D:\python\ExpertPython> & C:/Users/admin/AppData/Local/Programs/Python/Python39/python.exe "d:/python/ExpertPython/Chapter 13/04 - Memoization/fibonacci.py"
+
+gprof2dot.py -f pstats myapp.stats | dot -Tpng -o output.png
+
+Jaworski, 
+
+-m cProfile myapp.py
+
