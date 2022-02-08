@@ -1,0 +1,18 @@
+"{""groupId"":""507145"",""sourceSystemId"":""CS90"",""marketSegment"":""SM""}"
+"{"groupId": "507145","sourceSystemId": "CS90","marketSegment": "SM"}"
+
+"{""sourceSystemId"":""MEDISYS"",""mbrUid"":""F1A66ADDEC0453B9454384189A7D5E68"",""marketSegment"":""SNR""}"
+"{"sourceSystemId": "MEDISYS","mbrUid": "F1A66ADDEC0453B9454384189A7D5E68","marketSegment": "SNR"}"
+
+"{""groupId"":""W26954"",""sourceSystemId"":""WGS20"",""marketSegment"":""LG"",""subgroupId"":""W26954M001""}"
+"{"groupId": "W26954","sourceSystemId": "WGS20","marketSegment": "LG","subgroupId": "W26954M001"}"
+
+"{""sourceSystemId"":""STAR"",""mbrUid"":""2E94E5AE68576CF1EB4D7103B6A0B118"",""marketSegment"":""IND""}"
+"{"sourceSystemId": "STAR","mbrUid": "2E94E5AE68576CF1EB4D7103B6A0B118","marketSegment": "IND"}"
+
+"{""groupId"":""A91474"",""sourceSystemId"":""STAR"",""marketSegment"":""SM""}"
+"{"groupId": "A91474","sourceSystemId": "STAR","marketSegment": "SM"}"
+
+"{""groupId"":""M16931"",""sourceSystemId"":""STAR"",""marketSegment"":""SM""}"
+"{"groupId": "M16931","sourceSystemId": "STAR","marketSegment": "SM"}"
+
