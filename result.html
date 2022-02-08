@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+        <style>	
+                body {font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}	
+                /* Style the tab */	
+                .tab {	
+                  overflow: hidden;	
+                  border: 1px solid #ccc;
+/*                  background-color: #cce9fc; */
+                }	
+                /* Style the buttons inside the tab */	
+                .tab button {	
+                  background-color:  #7bc0ed;	
+                  float: center;	
+                  outline: none;	
+                  cursor: pointer;	
+                  padding: 5px 5px;	
+                  transition: 0.6s;	
+                  font-size: 12px;	
+                  border: 1px solid #d9f2ff;
+                  border-radius: 4px;
+                  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+                }	
+                /* Change background color of buttons on hover */	
+                .tab button:hover {	
+                  background-color: #ddd;
+                  transition: 0.6s;	
+                }	
+                /* Create an active/current tablink class */	
+                .tab button.active {	
+                  background-color: #11476b;
+                  color: #ffffff;
+	
+                }	
+                /* Style the tab content */	
+                .tabcontent {	
+                  display: none;	
+                  padding: 6px 12px;	
+                  border: 1px solid #ccc;	
+                  border-top: none;	
+                }	
+                </style>
+ 
+ <style type="text/css">
+ .table-sortable th {
+  cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after {
+  content: 25b4;
+}
+
+.table-sortable .th-sort-desc::after {
+  content: 25be;
+}
+
+.table-sortable .th-sort-asc::after,
+.table-sortable .th-sort-desc::after {
+  margin-left: 5px;
+}
+
+.table-sortable .th-sort-asc,
+.table-sortable .th-sort-desc {
+  background: rgba(51, 98, 187, 0.397);
+}
+
+nulltable a:link {
+        color: #666;
+        font-weight: bold;
+        text-decoration:none;
+}
+table a:visited {
+        color: #999999;
+        font-weight:bold;
+        text-decoration:none;
+}
+table a:active,
+table a:hover {
+        text-decoration:underline;
+}
+table {
+        color:#666;
+        font-size:12px;
+        background:#fafafa;
+        border:#ccc 1px solid;
+        border-radius:3px;
+        border-collapse:collapse;
+        border-spacing: 0;
+        box-shadow: 0 1px 2px #d1d1d1;
+}
+table th {
+        color: white;
+        text-align: center;
+        vertical-align: bottom;
+        height:15px;
+        padding-bottom: 3px;
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color:#006BB2;
+}
+.verticalText {
+        text-align: center;
+        vertical-align: middle;
+        width: 15px;
+        margin: 0px;
+        padding:1px 1px 0;
+        background-color:#006BB2;
+        white-space: nowrap;
+        -ms-transform: rotate(-90deg);          /* IE9+ */
+        -webkit-transform: rotate(-90deg);      /* Safari 3.1+, Chrome */
+        -moz-transform: rotate(-90deg);         /* FF3.5+ */
+        -o-transform: rotate(-90.0deg);         /* Opera 10.5 */
+}
+table th:first-child {
+        text-align: left;
+}
+table tr:first-child th:first-child {
+        border-top-left-radius:3px;}
+
+table tr:first-child th:last-child {
+        border-top-right-radius:3px;
+}
+table tr {
+        text-align: center;
+}
+table td:first-child {
+        text-align: left;
+        border-left: 0;
+}
+table td {
+        padding:5px 5px 5px;
+        border-right:1px solid #e0e0e0;
+        border-bottom:1px solid #e0e0e0;
+        border-left: 1px solid #e0e0e0;
+        }
+table tr:last-child td {
+        border-bottom:0;
+}
+table tr:last-child td:first-child {
+        border-bottom-left-radius:3px;
+}
+table tr:last-child td:last-child {
+        border-bottom-right-radius:3px;
+}
+.divHead{
+color : #999999; font-size: 12px; padding: 5px 5px; border-right:1px solid #ccc;border-left:1px solid #ccc;
+}
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+}
+.divTableCell, .divTableHead {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 3px 10px;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
+}
+</style>
+</head>
+<body class="body" style="margin: 1px; padding: 1px 1px 1px;">
+<h3 style="text-align:left"><a id="top"> HAR Parser V2 </a></h3>
+<table align="left" border=1>
+</table>
+</p>
+<hr>
+<h4 style="text-align:left"><a id="top"> <u>HAR Data details:</u></a></h4>
+<div class="tab">
+<button class="tablinks" onclick="harFiles(event, 'add_to_loaction.har')" id="defaultOpen">add_to_loaction.har</button>
+<button class="tablinks" onclick="harFiles(event, 'click_add_product.har')" id="defaultOpen">click_add_product.har</button>
+<button class="tablinks" onclick="harFiles(event, 'click_next.har')" id="defaultOpen">click_next.har</button>
+<button class="tablinks" onclick="harFiles(event, 'create_ent_quote.har')" id="defaultOpen">create_ent_quote.har</button>
+<button class="tablinks" onclick="harFiles(event, 'q1.har')" id="defaultOpen">q1.har</button>
+<button class="tablinks" onclick="harFiles(event, 'select_product.har')" id="defaultOpen">select_product.har</button>
+<button class="tablinks" onclick="harFiles(event, 'update_lastname.har')" id="defaultOpen">update_lastname.har</button>
+<button class="tablinks" onclick="harFiles(event, 'upload_location_file.har')" id="defaultOpen">upload_location_file.har</button>
+</div><div class="divHead" style="font-style: italic;">*** Size in bytes and Time in millisec</div><div><table>
+</table></div><div id="add_to_loaction.har" class="tabcontent divHead" >Input file : /Users/rupesh.kumar/utilites/HAR_Files_Automation/b2b_demo/add_to_loaction.har
+<table  border=1  class="table-sortable">
+<thead><tr><th>S.No</th><th>Start time</th><th>URLPath</th><th>URL Hostname</th><th>Req Content Format</th><th>Class</th><th>Method</th><th>Inner Methods</th><th>Request Type</th><th>Response Status</th><th>Response Size</th><th>Total Time</th><th>Wait Time(TTFB)</th><th>Blocked Time</th><th>Receive Time</th><th>Blocked Queueing Time</th></tr></thead>
+<tr><td>1</td><td align=center> 08:07:39.673</td><td align=center>/aurar=108&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - AddQMQGToWC_CopyToEQ</td><td align=center>POST</td><td align=center>200</td><td align=center>5589</td><td align=center>5229.11</td><td align=center>5222.20</td><td align=center>2.42</td><td align=center>4.34</td><td align=center>1.79</td></tr>
+<tr><td>2</td><td align=center> 08:07:44.943</td><td align=center>/aurar=109&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : vlocity_cmt.CpqAppHandler - getCarts</td><td align=center>POST</td><td align=center>200</td><td align=center>4701</td><td align=center>909.23</td><td align=center>899.62</td><td align=center>1.89</td><td align=center>7.56</td><td align=center>1.48</td></tr>
+<tr><td>3</td><td align=center> 08:07:44.945</td><td align=center>/aurar=110&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : vlocity_cmt.CpqAppHandler - getCarts</td><td align=center>POST</td><td align=center>200</td><td align=center>4700</td><td align=center>886.68</td><td align=center>881.00</td><td align=center>2.03</td><td align=center>3.49</td><td align=center>1.62</td></tr>
+<tr><td>4</td><td align=center> 08:07:44.976</td><td align=center>/aurar=111&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>dataraptor : ExtractAllRootLineItemFromQuote</td><td align=center>POST</td><td align=center>200</td><td align=center>4057</td><td align=center>455.58</td><td align=center>445.03</td><td align=center>1.85</td><td align=center>8.52</td><td align=center>1.46</td></tr>
+<tr><td>5</td><td align=center> 08:07:44.985</td><td align=center>/aurar=112&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>integrationprocedure : QMgetFields_WFieldLabel</td><td align=center>POST</td><td align=center>200</td><td align=center>4145</td><td align=center>516.36</td><td align=center>512.10</td><td align=center>1.84</td><td align=center>2.26</td><td align=center>1.42</td></tr>
+<tr><td>6</td><td align=center> 08:07:45.436</td><td align=center>/aurar=113&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : vlocity_cmt.CpqAppHandler - getCartsItems</td><td align=center>POST</td><td align=center>200</td><td align=center>34380</td><td align=center>2055.79</td><td align=center>1713.95</td><td align=center>2.53</td><td align=center>339.10</td><td align=center>2.05</td></tr>
+<tr><td>7</td><td align=center> 08:07:45.515</td><td align=center>/apex/b2bmap</td><td align=center>value-sales-42491--c.visualforce.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>200</td><td align=center>4307</td><td align=center>407.25</td><td align=center>393.23</td><td align=center>6.75</td><td align=center>7.13</td><td align=center>6.42</td></tr>
+<tr><td>8</td><td align=center> 08:07:45.930</td><td align=center>/maps/api/js</td><td align=center>maps.googleapis.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>200</td><td align=center>0</td><td align=center>0.07</td><td align=center>0.04</td><td align=center>-1.00</td><td align=center>0.02</td><td align=center>-1.00</td></tr>
+<tr><td>9</td><td align=center> 08:07:46.162</td><td align=center>/maps/api/js/ViewportInfoService.GetViewportInfo</td><td align=center>maps.googleapis.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>200</td><td align=center>555</td><td align=center>369.56</td><td align=center>34.54</td><td align=center>1.73</td><td align=center>7.39</td><td align=center>1.59</td></tr>
+<tr><td>10</td><td align=center> 08:07:51.042</td><td align=center>/maps/api/js/AuthenticationService.Authenticate</td><td align=center>maps.googleapis.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>200</td><td align=center>125</td><td align=center>381.43</td><td align=center>378.27</td><td align=center>2.24</td><td align=center>0.77</td><td align=center>1.98</td></tr>
+</table></div><div id="click_add_product.har" class="tabcontent divHead" >Input file : /Users/rupesh.kumar/utilites/HAR_Files_Automation/b2b_demo/click_add_product.har
+<table  border=1  class="table-sortable">
+<thead><tr><th>S.No</th><th>Start time</th><th>URLPath</th><th>URL Hostname</th><th>Req Content Format</th><th>Class</th><th>Method</th><th>Inner Methods</th><th>Request Type</th><th>Response Status</th><th>Response Size</th><th>Total Time</th><th>Wait Time(TTFB)</th><th>Blocked Time</th><th>Receive Time</th><th>Blocked Queueing Time</th></tr></thead>
+<tr><td>1</td><td align=center> 08:05:57.306</td><td align=center>/aurar=91&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : vlocity_cmt.CpqAppHandler - getCarts</td><td align=center>POST</td><td align=center>200</td><td align=center>4665</td><td align=center>620.90</td><td align=center>616.55</td><td align=center>1.68</td><td align=center>2.47</td><td align=center>1.28</td></tr>
+<tr><td>2</td><td align=center> 08:05:57.308</td><td align=center>/aurar=92&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : vlocity_cmt.CpqAppHandler - getCarts</td><td align=center>POST</td><td align=center>200</td><td align=center>4667</td><td align=center>628.13</td><td align=center>625.41</td><td align=center>1.40</td><td align=center>1.15</td><td align=center>1.04</td></tr>
+<tr><td>3</td><td align=center> 08:05:57.358</td><td align=center>/aurar=93&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : CpqAppHandler - getCatalogHierarchy</td><td align=center>POST</td><td align=center>200</td><td align=center>4897</td><td align=center>949.31</td><td align=center>944.52</td><td align=center>1.84</td><td align=center>2.78</td><td align=center>1.42</td></tr>
+<tr><td>4</td><td align=center> 08:05:57.360</td><td align=center>/aurar=94&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>integrationprocedure : create_WorkingCart</td><td align=center>POST</td><td align=center>200</td><td align=center>4092</td><td align=center>1046.52</td><td align=center>1042.79</td><td align=center>2.03</td><td align=center>1.54</td><td align=center>1.63</td></tr>
+<tr><td>5</td><td align=center> 08:05:58.411</td><td align=center>/aurar=95&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : CpqAppHandler - getCartsProducts</td><td align=center>POST</td><td align=center>200</td><td align=center>5499</td><td align=center>2230.12</td><td align=center>2226.45</td><td align=center>2.53</td><td align=center>0.98</td><td align=center>2.05</td></tr>
+</table></div><div id="click_next.har" class="tabcontent divHead" >Input file : /Users/rupesh.kumar/utilites/HAR_Files_Automation/b2b_demo/click_next.har
+<table  border=1  class="table-sortable">
+<thead><tr><th>S.No</th><th>Start time</th><th>URLPath</th><th>URL Hostname</th><th>Req Content Format</th><th>Class</th><th>Method</th><th>Inner Methods</th><th>Request Type</th><th>Response Status</th><th>Response Size</th><th>Total Time</th><th>Wait Time(TTFB)</th><th>Blocked Time</th><th>Receive Time</th><th>Blocked Queueing Time</th></tr></thead>
+<tr><td>1</td><td align=center> 08:03:45.775</td><td align=center>/aurar=54&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.DefaultDROmniScriptIntegration - </td><td align=center>POST</td><td align=center>200</td><td align=center>4055</td><td align=center>840.19</td><td align=center>836.85</td><td align=center>1.91</td><td align=center>1.26</td><td align=center>1.48</td></tr>
+<tr><td>2</td><td align=center> 08:03:46.624</td><td align=center>/aurar=55&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : CpqAppHandler - </td><td align=center>POST</td><td align=center>200</td><td align=center>4094</td><td align=center>1444.56</td><td align=center>1432.74</td><td align=center>2.10</td><td align=center>9.51</td><td align=center>1.61</td></tr>
+<tr><td>3</td><td align=center> 08:03:48.098</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>PlatformStateManagerController</td><td align=center>getTabByNameAndApp</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>4352</td><td align=center>421.79</td><td align=center>409.44</td><td align=center>1.95</td><td align=center>10.22</td><td align=center>1.53</td></tr>
+<tr><td>4</td><td align=center> 08:03:48.533</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>GlobalNavDropdownController</td><td align=center>getAllTabs</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>10481</td><td align=center>570.85</td><td align=center>567.38</td><td align=center>2.01</td><td align=center>1.28</td><td align=center>1.58</td></tr>
+<tr><td>5</td><td align=center> 08:03:48.579</td><td align=center>/auraCmpDef</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>302</td><td align=center>1306</td><td align=center>402.20</td><td align=center>398.12</td><td align=center>2.22</td><td align=center>1.70</td><td align=center>1.76</td></tr>
+<tr><td>6</td><td align=center> 08:03:48.981</td><td align=center>/auraCmpDef</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>200</td><td align=center>3666</td><td align=center>377.79</td><td align=center>367.73</td><td align=center>1.71</td><td align=center>8.16</td><td align=center>1.16</td></tr>
+<tr><td>7</td><td align=center> 08:03:49.147</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>GlobalNavDropdownController</td><td align=center>getAllTabs</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>10481</td><td align=center>1264.45</td><td align=center>902.96</td><td align=center>2.33</td><td align=center>358.99</td><td align=center>1.90</td></tr>
+<tr><td>8</td><td align=center> 08:03:49.379</td><td align=center>/auraCmpDef</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>302</td><td align=center>1301</td><td align=center>4503.19</td><td align=center>4499.06</td><td align=center>2.09</td><td align=center>1.90</td><td align=center>1.66</td></tr>
+<tr><td>9</td><td align=center> 08:03:53.882</td><td align=center>/auraCmpDef</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>200</td><td align=center>237617</td><td align=center>2521.89</td><td align=center>562.97</td><td align=center>1.58</td><td align=center>1957.17</td><td align=center>1.13</td></tr>
+<tr><td>10</td><td align=center> 08:03:56.506</td><td align=center>/aurar=59&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>dataraptor : b2bexpress_getLatestWorkingCart</td><td align=center>POST</td><td align=center>200</td><td align=center>4008</td><td align=center>754.59</td><td align=center>722.76</td><td align=center>1.71</td><td align=center>29.97</td><td align=center>1.32</td></tr>
+<tr><td>11</td><td align=center> 08:03:56.509</td><td align=center>/aurar=60&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : vlocity_cmt.CpqAppHandler - getCarts</td><td align=center>POST</td><td align=center>200</td><td align=center>4671</td><td align=center>5190.94</td><td align=center>4063.94</td><td align=center>1.55</td><td align=center>1125.31</td><td align=center>1.17</td></tr>
+<tr><td>12</td><td align=center> 08:03:56.512</td><td align=center>/aurar=61&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : vlocity_cmt.CpqAppHandler - getCarts</td><td align=center>POST</td><td align=center>200</td><td align=center>4669</td><td align=center>3218.03</td><td align=center>1080.84</td><td align=center>1.47</td><td align=center>2135.57</td><td align=center>1.10</td></tr>
+<tr><td>13</td><td align=center> 08:03:56.578</td><td align=center>/aurar=62&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>dataraptor : ExtractAllRootLineItemFromQuote</td><td align=center>POST</td><td align=center>200</td><td align=center>4007</td><td align=center>2000.78</td><td align=center>607.57</td><td align=center>1382.46</td><td align=center>10.49</td><td align=center>1.61</td></tr>
+<tr><td>14</td><td align=center> 08:04:01.757</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>OnboardingManagerController</td><td align=center>getDeclarativePrompts</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>3994</td><td align=center>746.79</td><td align=center>405.23</td><td align=center>2.19</td><td align=center>339.20</td><td align=center>1.78</td></tr>
+<tr><td>15</td><td align=center> 08:04:01.759</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>InstrumentationBeaconController</td><td align=center>sendData</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>4119</td><td align=center>779.08</td><td align=center>438.12</td><td align=center>3.82</td><td align=center>336.94</td><td align=center>3.42</td></tr>
+<tr><td>16</td><td align=center> 08:04:11.151</td><td align=center>/aurar=65&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-FetchUserDetails-fetchUserContext</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>4190</td><td align=center>2008.97</td><td align=center>648.33</td><td align=center>1.93</td><td align=center>1358.57</td><td align=center>1.53</td></tr>
+<tr><td>17</td><td align=center> 08:04:13.164</td><td align=center>/aurar=66&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>dataraptor : GetRecordTypeId</td><td align=center>POST</td><td align=center>200</td><td align=center>4036</td><td align=center>782.92</td><td align=center>455.37</td><td align=center>2.24</td><td align=center>325.15</td><td align=center>1.74</td></tr>
+<tr><td>18</td><td align=center> 08:04:13.166</td><td align=center>/aurar=67&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>dataraptor : GetRecordTypeId</td><td align=center>POST</td><td align=center>200</td><td align=center>4036</td><td align=center>471.33</td><td align=center>461.12</td><td align=center>3.76</td><td align=center>6.31</td><td align=center>3.33</td></tr>
+<tr><td>19</td><td align=center> 08:04:13.642</td><td align=center>/aurar=68&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>integrationprocedure : QMgetFields_WFieldLabel</td><td align=center>POST</td><td align=center>200</td><td align=center>4148</td><td align=center>929.08</td><td align=center>908.77</td><td align=center>3.14</td><td align=center>16.99</td><td align=center>2.72</td></tr>
+<tr><td>20</td><td align=center> 08:04:14.574</td><td align=center>/aurar=69&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>integrationprocedure : getAll_members</td><td align=center>POST</td><td align=center>200</td><td align=center>4059</td><td align=center>667.21</td><td align=center>656.12</td><td align=center>2.20</td><td align=center>8.70</td><td align=center>1.74</td></tr>
+<tr><td>21</td><td align=center> 08:04:25.470</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>GlobalNavDropdownController</td><td align=center>getModelForEntity</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>4422</td><td align=center>671.86</td><td align=center>669.00</td><td align=center>1.72</td><td align=center>0.98</td><td align=center>1.32</td></tr>
+</table></div><div id="create_ent_quote.har" class="tabcontent divHead" >Input file : /Users/rupesh.kumar/utilites/HAR_Files_Automation/b2b_demo/create_ent_quote.har
+<table  border=1  class="table-sortable">
+<thead><tr><th>S.No</th><th>Start time</th><th>URLPath</th><th>URL Hostname</th><th>Req Content Format</th><th>Class</th><th>Method</th><th>Inner Methods</th><th>Request Type</th><th>Response Status</th><th>Response Size</th><th>Total Time</th><th>Wait Time(TTFB)</th><th>Blocked Time</th><th>Receive Time</th><th>Blocked Queueing Time</th></tr></thead>
+<tr><td>1</td><td align=center> 08:02:21.355</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>NavEventManagerController</td><td align=center>getResolvedIntegrationUrl</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>4101</td><td align=center>457.27</td><td align=center>448.21</td><td align=center>2.00</td><td align=center>6.90</td><td align=center>1.49</td></tr>
+<tr><td>2</td><td align=center> 08:02:21.817</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>NavEventManagerController</td><td align=center>getClassicNonSetupPageReferenceMappings</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>7290</td><td align=center>838.67</td><td align=center>445.04</td><td align=center>2.07</td><td align=center>391.39</td><td align=center>1.60</td></tr>
+<tr><td>3</td><td align=center> 08:02:22.665</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>NavEventManagerController</td><td align=center>getClassicSetupPageReferenceMappings</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>74250</td><td align=center>2749.61</td><td align=center>542.43</td><td align=center>2.30</td><td align=center>2204.70</td><td align=center>1.82</td></tr>
+<tr><td>4</td><td align=center> 08:02:25.574</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>NavEventManagerController</td><td align=center>getResolvedIntegrationUrl</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>4100</td><td align=center>452.40</td><td align=center>449.42</td><td align=center>1.72</td><td align=center>1.12</td><td align=center>1.36</td></tr>
+<tr><td>5</td><td align=center> 08:02:26.032</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>NavEventManagerController</td><td align=center>getResolvedIntegrationUrl</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>4100</td><td align=center>463.53</td><td align=center>460.11</td><td align=center>2.31</td><td align=center>0.94</td><td align=center>1.84</td></tr>
+<tr><td>6</td><td align=center> 08:02:26.520</td><td align=center>/auraCmpDef</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>302</td><td align=center>1314</td><td align=center>637.38</td><td align=center>633.37</td><td align=center>1.89</td><td align=center>1.98</td><td align=center>1.45</td></tr>
+<tr><td>7</td><td align=center> 08:02:27.157</td><td align=center>/auraCmpDef</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>200</td><td align=center>5002</td><td align=center>407.58</td><td align=center>403.12</td><td align=center>1.80</td><td align=center>2.49</td><td align=center>1.16</td></tr>
+<tr><td>8</td><td align=center> 08:02:27.634</td><td align=center>/auraCmpDef</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>302</td><td align=center>1293</td><td align=center>363.40</td><td align=center>359.11</td><td align=center>2.06</td><td align=center>2.06</td><td align=center>1.59</td></tr>
+<tr><td>9</td><td align=center> 08:02:27.998</td><td align=center>/na110/auraCmpDef</td><td align=center>static.lightning.force.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>200</td><td align=center>3620</td><td align=center>1353.46</td><td align=center>251.40</td><td align=center>1.83</td><td align=center>6.53</td><td align=center>1.28</td></tr>
+<tr><td>10</td><td align=center> 08:02:29.112</td><td align=center>/auraCmpDef</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>302</td><td align=center>1717</td><td align=center>3471.41</td><td align=center>3466.47</td><td align=center>2.29</td><td align=center>2.49</td><td align=center>1.83</td></tr>
+<tr><td>11</td><td align=center> 08:02:32.583</td><td align=center>/auraCmpDef</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>200</td><td align=center>155954</td><td align=center>4662.05</td><td align=center>586.82</td><td align=center>1.92</td><td align=center>4073.12</td><td align=center>1.37</td></tr>
+<tr><td>12</td><td align=center> 08:02:37.342</td><td align=center>/aurar=49&aura.ApexAction.execute=2</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController<br/>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-LWCPrep<br/>execute-NewportUtilities-getNewportUrl</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>4300</td><td align=center>653.59</td><td align=center>647.59</td><td align=center>3.27</td><td align=center>2.47</td><td align=center>2.49</td></tr>
+<tr><td>13</td><td align=center> 08:02:38.053</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>InstrumentationBeaconController</td><td align=center>sendData</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>4129</td><td align=center>592.53</td><td align=center>579.22</td><td align=center>4.17</td><td align=center>8.89</td><td align=center>3.70</td></tr>
+</table></div><div id="q1.har" class="tabcontent divHead" >Input file : /Users/rupesh.kumar/utilites/HAR_Files_Automation/b2b_demo/q1.har
+<table  border=1  class="table-sortable">
+<thead><tr><th>S.No</th><th>Start time</th><th>URLPath</th><th>URL Hostname</th><th>Req Content Format</th><th>Class</th><th>Method</th><th>Inner Methods</th><th>Request Type</th><th>Response Status</th><th>Response Size</th><th>Total Time</th><th>Wait Time(TTFB)</th><th>Blocked Time</th><th>Receive Time</th><th>Blocked Queueing Time</th></tr></thead>
+<tr><td>1</td><td align=center> 09:33:07.400</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>NavEventManagerController</td><td align=center>getResolvedIntegrationUrl</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>1814</td><td align=center>471.80</td><td align=center>467.36</td><td align=center>2.30</td><td align=center>1.98</td><td align=center>1.91</td></tr>
+<tr><td>2</td><td align=center> 09:33:07.876</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>NavEventManagerController</td><td align=center>getResolvedIntegrationUrl</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>1814</td><td align=center>525.82</td><td align=center>516.92</td><td align=center>2.50</td><td align=center>6.24</td><td align=center>2.14</td></tr>
+<tr><td>3</td><td align=center> 09:33:08.433</td><td align=center>/aurar=110&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-LWCPrep</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>1927</td><td align=center>448.65</td><td align=center>416.45</td><td align=center>25.46</td><td align=center>6.59</td><td align=center>25.13</td></tr>
+<tr><td>4</td><td align=center> 09:33:08.676</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>FingerprintController</td><td align=center>logFingerprint</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>1712</td><td align=center>397.24</td><td align=center>392.55</td><td align=center>2.71</td><td align=center>1.80</td><td align=center>2.31</td></tr>
+<tr><td>5</td><td align=center> 09:33:09.121</td><td align=center>/aura</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>InstrumentationBeaconController</td><td align=center>sendData</td><td align=center></td><td align=center>POST</td><td align=center>200</td><td align=center>1841</td><td align=center>441.84</td><td align=center>435.81</td><td align=center>2.99</td><td align=center>2.84</td><td align=center>2.58</td></tr>
+</table></div><div id="select_product.har" class="tabcontent divHead" >Input file : /Users/rupesh.kumar/utilites/HAR_Files_Automation/b2b_demo/select_product.har
+<table  border=1  class="table-sortable">
+<thead><tr><th>S.No</th><th>Start time</th><th>URLPath</th><th>URL Hostname</th><th>Req Content Format</th><th>Class</th><th>Method</th><th>Inner Methods</th><th>Request Type</th><th>Response Status</th><th>Response Size</th><th>Total Time</th><th>Wait Time(TTFB)</th><th>Blocked Time</th><th>Receive Time</th><th>Blocked Queueing Time</th></tr></thead>
+<tr><td>1</td><td align=center> 08:06:25.586</td><td align=center>/aurar=96&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : CpqAppHandler - postCartsItems</td><td align=center>POST</td><td align=center>200</td><td align=center>19827</td><td align=center>17568.44</td><td align=center>17156.80</td><td align=center>2.08</td><td align=center>409.37</td><td align=center>1.52</td></tr>
+<tr><td>2</td><td align=center> 08:06:43.163</td><td align=center>/aurar=97&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : CpqAppHandler - getCarts</td><td align=center>POST</td><td align=center>200</td><td align=center>4831</td><td align=center>836.00</td><td align=center>827.79</td><td align=center>2.23</td><td align=center>5.80</td><td align=center>1.68</td></tr>
+<tr><td>3</td><td align=center> 08:06:44.018</td><td align=center>/aurar=98&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : vlocity_cmt.CpqAppHandler - getCarts</td><td align=center>POST</td><td align=center>200</td><td align=center>4667</td><td align=center>674.90</td><td align=center>671.39</td><td align=center>1.89</td><td align=center>1.45</td><td align=center>1.47</td></tr>
+<tr><td>4</td><td align=center> 08:06:44.020</td><td align=center>/aurar=99&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : vlocity_cmt.CpqAppHandler - getCarts</td><td align=center>POST</td><td align=center>200</td><td align=center>4666</td><td align=center>674.13</td><td align=center>670.52</td><td align=center>2.07</td><td align=center>1.39</td><td align=center>1.66</td></tr>
+<tr><td>5</td><td align=center> 08:06:44.048</td><td align=center>/aurar=100&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>integrationprocedure : b2bExpress_updateQuantityAndReprice</td><td align=center>POST</td><td align=center>200</td><td align=center>4054</td><td align=center>1960.61</td><td align=center>1948.97</td><td align=center>1.97</td><td align=center>9.49</td><td align=center>1.55</td></tr>
+<tr><td>6</td><td align=center> 08:06:44.068</td><td align=center>/aurar=101&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : CpqAppHandler - getCartsItems</td><td align=center>POST</td><td align=center>200</td><td align=center>20563</td><td align=center>1716.18</td><td align=center>1390.03</td><td align=center>1.95</td><td align=center>324.03</td><td align=center>1.53</td></tr>
+<tr><td>7</td><td align=center> 08:06:45.791</td><td align=center>/aurar=102&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : CpqAppHandler - getCarts</td><td align=center>POST</td><td align=center>200</td><td align=center>4835</td><td align=center>770.95</td><td align=center>765.72</td><td align=center>2.12</td><td align=center>2.92</td><td align=center>1.66</td></tr>
+<tr><td>8</td><td align=center> 08:06:46.012</td><td align=center>/aurar=103&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : CpqAppHandler - getCartsItems</td><td align=center>POST</td><td align=center>200</td><td align=center>20570</td><td align=center>1757.63</td><td align=center>1371.68</td><td align=center>2.35</td><td align=center>383.44</td><td align=center>1.88</td></tr>
+<tr><td>9</td><td align=center> 08:06:47.778</td><td align=center>/aurar=104&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : CpqAppHandler - getCarts</td><td align=center>POST</td><td align=center>200</td><td align=center>4834</td><td align=center>821.12</td><td align=center>816.88</td><td align=center>2.44</td><td align=center>1.59</td><td align=center>1.89</td></tr>
+</table></div><div id="update_lastname.har" class="tabcontent divHead" >Input file : /Users/rupesh.kumar/utilites/HAR_Files_Automation/b2b_demo/update_lastname.har
+<table  border=1  class="table-sortable">
+<thead><tr><th>S.No</th><th>Start time</th><th>URLPath</th><th>URL Hostname</th><th>Req Content Format</th><th>Class</th><th>Method</th><th>Inner Methods</th><th>Request Type</th><th>Response Status</th><th>Response Size</th><th>Total Time</th><th>Wait Time(TTFB)</th><th>Blocked Time</th><th>Receive Time</th><th>Blocked Queueing Time</th></tr></thead>
+<tr><td>1</td><td align=center> 08:07:14.365</td><td align=center>/aurar=105&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : CpqAppHandler - putCartsItems</td><td align=center>POST</td><td align=center>200</td><td align=center>12801</td><td align=center>3475.48</td><td align=center>3449.06</td><td align=center>18.53</td><td align=center>7.21</td><td align=center>18.10</td></tr>
+<tr><td>2</td><td align=center> 08:07:17.845</td><td align=center>/aurar=106&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : CpqAppHandler - getCartLineItemPrices</td><td align=center>POST</td><td align=center>200</td><td align=center>4700</td><td align=center>545.97</td><td align=center>541.27</td><td align=center>1.76</td><td align=center>2.77</td><td align=center>1.36</td></tr>
+<tr><td>3</td><td align=center> 08:07:18.402</td><td align=center>/aurar=107&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : CpqAppHandler - getCarts</td><td align=center>POST</td><td align=center>200</td><td align=center>4710</td><td align=center>778.64</td><td align=center>771.65</td><td align=center>2.25</td><td align=center>4.58</td><td align=center>1.83</td></tr>
+</table></div><div id="upload_location_file.har" class="tabcontent divHead" >Input file : /Users/rupesh.kumar/utilites/HAR_Files_Automation/b2b_demo/upload_location_file.har
+<table  border=1  class="table-sortable">
+<thead><tr><th>S.No</th><th>Start time</th><th>URLPath</th><th>URL Hostname</th><th>Req Content Format</th><th>Class</th><th>Method</th><th>Inner Methods</th><th>Request Type</th><th>Response Status</th><th>Response Size</th><th>Total Time</th><th>Wait Time(TTFB)</th><th>Blocked Time</th><th>Receive Time</th><th>Blocked Queueing Time</th></tr></thead>
+<tr><td>1</td><td align=center> 08:05:04.749</td><td align=center>/aurar=71&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4111</td><td align=center>1234.01</td><td align=center>1223.80</td><td align=center>2.10</td><td align=center>7.92</td><td align=center>1.63</td></tr>
+<tr><td>2</td><td align=center> 08:05:05.987</td><td align=center>/aurar=72&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4107</td><td align=center>516.15</td><td align=center>505.73</td><td align=center>2.21</td><td align=center>8.00</td><td align=center>1.68</td></tr>
+<tr><td>3</td><td align=center> 08:05:06.506</td><td align=center>/aurar=73&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4103</td><td align=center>457.42</td><td align=center>450.87</td><td align=center>1.96</td><td align=center>4.42</td><td align=center>1.55</td></tr>
+<tr><td>4</td><td align=center> 08:05:06.967</td><td align=center>/aurar=74&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4106</td><td align=center>750.26</td><td align=center>746.93</td><td align=center>2.32</td><td align=center>0.81</td><td align=center>1.82</td></tr>
+<tr><td>5</td><td align=center> 08:05:07.722</td><td align=center>/aurar=75&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4106</td><td align=center>450.99</td><td align=center>440.92</td><td align=center>2.54</td><td align=center>7.33</td><td align=center>2.01</td></tr>
+<tr><td>6</td><td align=center> 08:05:08.177</td><td align=center>/aurar=76&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4106</td><td align=center>476.56</td><td align=center>466.74</td><td align=center>2.39</td><td align=center>7.23</td><td align=center>1.90</td></tr>
+<tr><td>7</td><td align=center> 08:05:08.656</td><td align=center>/aurar=77&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4107</td><td align=center>489.11</td><td align=center>486.03</td><td align=center>2.34</td><td align=center>0.55</td><td align=center>1.84</td></tr>
+<tr><td>8</td><td align=center> 08:05:09.148</td><td align=center>/aurar=78&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4106</td><td align=center>454.88</td><td align=center>447.78</td><td align=center>1.95</td><td align=center>5.00</td><td align=center>1.53</td></tr>
+<tr><td>9</td><td align=center> 08:05:09.606</td><td align=center>/aurar=79&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4105</td><td align=center>468.39</td><td align=center>464.05</td><td align=center>1.90</td><td align=center>2.27</td><td align=center>1.47</td></tr>
+<tr><td>10</td><td align=center> 08:05:10.078</td><td align=center>/aurar=80&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4103</td><td align=center>445.53</td><td align=center>432.79</td><td align=center>2.43</td><td align=center>10.11</td><td align=center>1.90</td></tr>
+<tr><td>11</td><td align=center> 08:05:10.526</td><td align=center>/aurar=81&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4107</td><td align=center>457.10</td><td align=center>447.82</td><td align=center>2.07</td><td align=center>7.07</td><td align=center>1.66</td></tr>
+<tr><td>12</td><td align=center> 08:05:10.987</td><td align=center>/aurar=82&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4105</td><td align=center>446.09</td><td align=center>433.63</td><td align=center>2.60</td><td align=center>9.67</td><td align=center>2.08</td></tr>
+<tr><td>13</td><td align=center> 08:05:11.436</td><td align=center>/aurar=83&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4106</td><td align=center>468.78</td><td align=center>454.41</td><td align=center>2.22</td><td align=center>11.95</td><td align=center>1.79</td></tr>
+<tr><td>14</td><td align=center> 08:05:11.909</td><td align=center>/aurar=84&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4104</td><td align=center>481.45</td><td align=center>478.32</td><td align=center>2.33</td><td align=center>0.61</td><td align=center>1.86</td></tr>
+<tr><td>15</td><td align=center> 08:05:12.393</td><td align=center>/aurar=85&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4104</td><td align=center>457.11</td><td align=center>453.94</td><td align=center>2.10</td><td align=center>0.90</td><td align=center>1.70</td></tr>
+<tr><td>16</td><td align=center> 08:05:12.855</td><td align=center>/aurar=86&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4104</td><td align=center>519.19</td><td align=center>508.36</td><td align=center>2.63</td><td align=center>7.99</td><td align=center>2.14</td></tr>
+<tr><td>17</td><td align=center> 08:05:13.377</td><td align=center>/aurar=87&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4106</td><td align=center>436.79</td><td align=center>431.36</td><td align=center>2.65</td><td align=center>2.58</td><td align=center>2.14</td></tr>
+<tr><td>18</td><td align=center> 08:05:13.817</td><td align=center>/aurar=88&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4106</td><td align=center>447.47</td><td align=center>441.15</td><td align=center>2.47</td><td align=center>3.68</td><td align=center>2.00</td></tr>
+<tr><td>19</td><td align=center> 08:05:14.268</td><td align=center>/aurar=89&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-BusinessProcessDisplayController-GenericInvoke2</td><td align=center>GenericInvoke2 : vlocity_cmt.IntegrationProcedureService - member_upload</td><td align=center>POST</td><td align=center>200</td><td align=center>4528</td><td align=center>686.46</td><td align=center>682.57</td><td align=center>2.51</td><td align=center>1.20</td><td align=center>2.03</td></tr>
+<tr><td>20</td><td align=center> 08:05:15.004</td><td align=center>/aurar=90&aura.ApexAction.execute=1</td><td align=center>value-sales-42491.lightning.force.com</td><td align=center>application/x-www-form-urlencoded; charset=UTF-8</td><td align=center>ApexActionController</td><td align=center>execute-LWCDatasource-handleData</td><td align=center>apexremote : LWCDatasource - getUserProfile</td><td align=center>POST</td><td align=center>200</td><td align=center>4192</td><td align=center>460.21</td><td align=center>450.05</td><td align=center>1.93</td><td align=center>8.07</td><td align=center>1.54</td></tr>
+<tr><td>21</td><td align=center> 08:05:15.132</td><td align=center>/apex/b2bmap</td><td align=center>value-sales-42491--c.visualforce.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>302</td><td align=center>669</td><td align=center>2021.98</td><td align=center>351.16</td><td align=center>7.87</td><td align=center>1.53</td><td align=center>7.34</td></tr>
+<tr><td>22</td><td align=center> 08:05:16.838</td><td align=center>/visualforce/session</td><td align=center>value-sales-42491.my.salesforce.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>302</td><td align=center>1386</td><td align=center>419.78</td><td align=center>413.16</td><td align=center>4.26</td><td align=center>2.09</td><td align=center>3.35</td></tr>
+<tr><td>23</td><td align=center> 08:05:17.257</td><td align=center>/visualforce/recsession</td><td align=center>value-sales-42491--c.visualforce.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>302</td><td align=center>1336</td><td align=center>380.73</td><td align=center>375.07</td><td align=center>2.98</td><td align=center>2.55</td><td align=center>2.62</td></tr>
+<tr><td>24</td><td align=center> 08:05:17.638</td><td align=center>/apex/b2bmap</td><td align=center>value-sales-42491--c.visualforce.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>200</td><td align=center>4307</td><td align=center>496.50</td><td align=center>486.64</td><td align=center>2.98</td><td align=center>6.76</td><td align=center>2.65</td></tr>
+<tr><td>25</td><td align=center> 08:05:18.152</td><td align=center>/maps/api/js</td><td align=center>maps.googleapis.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>200</td><td align=center>40172</td><td align=center>1092.10</td><td align=center>48.95</td><td align=center>6.71</td><td align=center>72.63</td><td align=center>6.62</td></tr>
+<tr><td>26</td><td align=center> 08:05:26.403</td><td align=center>/maps/api/js/ViewportInfoService.GetViewportInfo</td><td align=center>maps.googleapis.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>200</td><td align=center>297</td><td align=center>372.53</td><td align=center>370.31</td><td align=center>1.55</td><td align=center>0.56</td><td align=center>1.37</td></tr>
+<tr><td>27</td><td align=center> 08:05:30.850</td><td align=center>/maps/api/js/AuthenticationService.Authenticate</td><td align=center>maps.googleapis.com</td><td align=center></td><td align=center></td><td align=center></td><td align=center></td><td align=center>GET</td><td align=center>200</td><td align=center>126</td><td align=center>405.70</td><td align=center>402.60</td><td align=center>2.21</td><td align=center>0.75</td><td align=center>1.95</td></tr>
+</table><script>
+        function harFiles(evt, fileName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(fileName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+        
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+        </script>
+        <script>
+          /**
+      * Sorts a HTML table.
+      * 
+      * @param {HTMLTableElement} table The table to sort
+      * @param {number} column The index of the column to sort
+      * @param {boolean} asc Determines if the sorting will be in ascending
+      */
+      function sortTableByColumn(table, column, asc = true) {
+        const dirModifier = asc ? 1 : -1;
+        const tBody = table.tBodies[0];
+        const rows = Array.from(tBody.querySelectorAll("tr"));
+      
+        // Sort each row
+        const sortedRows = rows.sort((a, b) => {
+            const aColText = parseFloat(a.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim(), 10);
+            const bColText = parseFloat(b.querySelector(`td:nth-child(${ column + 1 })`).textContent.trim(), 10);
+      
+            return aColText > bColText ? (1 * dirModifier) : (-1 * dirModifier);
+        });
+      
+        // Remove all existing TRs from the table
+          while (tBody.firstChild) {
+            tBody.removeChild(tBody.firstChild);
+        }
+      
+        // Re-add the newly sorted rows
+        tBody.append(...sortedRows);
+      
+        // Remember how the column is currently sorted
+        table.querySelectorAll("th").forEach(th => th.classList.remove("th-sort-asc", "th-sort-desc"));
+        table.querySelector(`th:nth-child(${ column + 1})`).classList.toggle("th-sort-asc", asc);
+        table.querySelector(`th:nth-child(${ column + 1})`).classList.toggle("th-sort-desc", !asc);
+      }
+      
+      document.querySelectorAll(".table-sortable th").forEach(headerCell => {
+        headerCell.addEventListener("click", () => {
+            const tableElement = headerCell.parentElement.parentElement.parentElement;
+            const headerIndex = Array.prototype.indexOf.call(headerCell.parentElement.children, headerCell);
+            const currentIsAscending = headerCell.classList.contains("th-sort-asc");
+      
+            sortTableByColumn(tableElement, headerIndex, !currentIsAscending);
+        });
+      });
+    
+      </script>
+<br></br>
+</body> </HTML>
