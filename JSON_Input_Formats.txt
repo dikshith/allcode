@@ -1,0 +1,17 @@
+Input Format JSON :
+
+FORMAT 1 :
+
+{"preview":false,"result":{"Req":"{\"sourceSystemId\":\"STAR\",\"mbrUid\":\"56D24C5E5C1668C37C6F1E916EA55E9B\",\"marketSegment\":\"IND\"}"}}
+{"preview":false,"result":{"Req":"{\"sourceSystemId\":\"MEDISYS\",\"mbrUid\":\"A6DD85B239AD175A6A95136BD248AEE5\",\"marketSegment\":\"SNR\"}"}}
+{"preview":false,"result":{"Req":"{\"sourceSystemId\":\"STAR\",\"mbrUid\":\"5AE494983AFF22D2676C566A16153C87\",\"marketSegment\":\"IND\"}"}}
+{"preview":false,"result":{"Req":"{\"sourceSystemId\":\"STAR\",\"mbrUid\":\"4AF1E34EF047488939360C4B4662C55C\",\"marketSegment\":\"IND\"}"}}
+{"preview":false,"result":{"Req":"{\"sourceSystemId\":\"STAR\",\"mbrUid\":\"39F384B83BE96E3E51866A98DFAA796A\",\"marketSegment\":\"IND\"}"}}
+{"preview":false,"result":{"Req":"{\"sourceSystemId\":\"STAR\",\"mbrUid\":\"234BC87D9B7E08DC0370C1590047079F\",\"marketSegment\":\"IND\"}"}}
+{"preview":false,"result":{"Req":"{\"sourceSystemId\":\"STAR\",\"mbrUid\":\"EC38DA5E9F8A8C72592ECA8710C5EF76\",\"marketSegment\":\"IND\"}"}}
+
+FORMAT 2 :
+"preview":false,"result":{"Req":"{\n  \"clientId\": \"W11399\",\n  \"sourceSystemId\": \"WGS20\",\n  \"product\": [\n    {\n      \"productType\": \"VSN\",\n      \"subgroupId\": \"W11399V001\"\n    },\n    {\n      \"productType\": \"VSN\",\n      \"subgroupId\": \"W11399VC01\"\n    },\n    {\n      \"productType\": \"DEN\",\n      \"subgroupId\": \"W11399D001\"\n    },\n    {\n      \"productType\": \"MED\",\n      \"subgroupId\": \"W11399MC01\"\n    },\n    {\n      \"productType\": \"DEN\",\n      \"subgroupId\": \"W11399DC01\"\n    },\n    {\n      \"productType\": \"MED\",\n      \"subgroupId\": \"W11399M001\"\n    }\n  ]\n}"}}
+{"preview":false,"result":{"Req":"{\n  \"clientId\": \"L00797\",\n  \"sourceSystemId\": \"WGS20\",\n  \"product\": [\n    {\n      \"productType\": \"MED\",\n      \"subgroupId\": \"L00797MC01\"\n    },\n    {\n      \"productType\": \"MED\",\n      \"subgroupId\": \"L00797M001\"\n    },\n    {\n      \"productType\": \"MED\",\n      \"subgroupId\": \"L00797MS01\"\n    }\n  ]\n}"}}
+{"preview":false,"result":{"Req":"{\n  \"clientId\": \"CT5749\",\n  \"sourceSystemId\": \"WGS20\",\n  \"product\": [\n    {\n      \"productType\": \"MED\",\n      \"subgroupId\": \"CT5749M003\"\n    },\n    {\n      \"productType\": \"MED\",\n      \"subgroupId\": \"CT5749M004\"\n    },\n    {\n      \"productType\": \"MED\",\n      \"subgroupId\": \"CT5749M002\"\n    },\n    {\n      \"productType\": \"MED\",\n      \"subgroupId\": \"CT5749M001\"\n    }\n  ]\n}"}}
+

@@ -1,0 +1,6 @@
+{\"sourceSystemId\":\"STAR\",\"mbrUid\":\"83594A7AC2EA6246C8C1610A0F5B1A28\",\"marketSegment\":\"IND\"}
+{\"sourceSystemId\":\"STAR\",\"mbrUid\":\"BB55E86DDD6137DE4E8D706255761EE9\",\"marketSegment\":\"IND\"}
+{\"sourceSystemId\":\"STAR\",\"mbrUid\":\"E28AA28A292CAD60EF26E7AD15EC7D44\",\"marketSegment\":\"IND\"}
+{\"groupId\":\"435068\",\"sourceSystemId\":\"STAR\",\"marketSegment\":\"SM\"}
+{\"groupId\":\"435068\",\"sourceSystemId\":\"STAR\",\"marketSegment\":\"SM\"}
+

@@ -29,6 +29,7 @@ def analize_file(inputfile, sample_size, accuracy):
     """
 
     # read a sample from input file
+    
     with open(inputfile, "r") as f:
         # this will make a list of first n lines and store it in the sample variable (list), where n = sample_size
         sample = [next(f) for _ in range(sample_size)]
